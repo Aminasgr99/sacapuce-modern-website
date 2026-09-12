@@ -15,257 +15,232 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">
+                <div class="logo" onclick="goHome()">
                     <i class="fas fa-shoe-prints"></i>
                     <span>SACAPUCE</span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#femme">Femme</a></li>
-                    <li><a href="#homme">Homme</a></li>
-                    <li><a href="#collections">Collections</a></li>
-                    <li><a href="#blog">Conseils</a></li>
+                    <li><a href="javascript:showCategory('femme')">Femme</a></li>
+                    <li><a href="javascript:showCategory('homme')">Homme</a></li>
+                    <li><a href="javascript:scrollToSection('collections')">Collections</a></li>
+                    <li><a href="javascript:scrollToSection('blog')">Conseils</a></li>
                 </ul>
                 <div class="nav-right">
                     <input type="text" class="search-bar" placeholder="Rechercher...">
-                    <a href="#panier" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></a>
-                    <a href="#compte" class="user-icon"><i class="fas fa-user"></i></a>
+                    <a href="javascript:showCart()" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></a>
+                    <a href="javascript:toggleMenu()" class="user-icon"><i class="fas fa-user"></i></a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Trouvez Vos Chaussures Idéales</h1>
-            <p>Du 40 au 48 • Depuis 1980 • +400 Modèles</p>
-            <button class="btn btn-primary">Explorer nos collections</button>
-        </div>
-        <div class="hero-image">
-            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="200" cy="200" r="180" fill="#e94b9d" opacity="0.1"/>
-                <path d="M 150 250 Q 150 200 200 200 Q 250 200 250 250" fill="#d4af37" opacity="0.3"/>
-            </svg>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- HOME PAGE -->
+        <div id="homePage" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Trouvez Vos Chaussures Idéales</h1>
+                    <p>Du 40 au 48 • Depuis 1980 • +400 Modèles</p>
+                    <button class="btn btn-primary" onclick="scrollToSection('products')">Explorer nos collections</button>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="180" fill="#e94b9d" opacity="0.1"/>
+                        <path d="M 150 250 Q 150 200 200 200 Q 250 200 250 250" fill="#d4af37" opacity="0.3"/>
+                    </svg>
+                </div>
+            </section>
 
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <i class="fas fa-award"></i>
-                    <h3>Depuis 1980</h3>
-                    <p>Plus de 40 ans d'expertise</p>
+            <!-- Trust Section -->
+            <section class="trust-section">
+                <div class="container">
+                    <div class="trust-grid">
+                        <div class="trust-card">
+                            <i class="fas fa-award"></i>
+                            <h3>Depuis 1980</h3>
+                            <p>Plus de 40 ans d'expertise</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-shoe-prints"></i>
+                            <h3>+400 Modèles</h3>
+                            <p>Tous les styles disponibles</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Livraison Gratuite</h3>
+                            <p>Dès 100€ d'achat</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-undo-alt"></i>
+                            <h3>Retours Faciles</h3>
+                            <p>30 jours pour changer d'avis</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-card">
-                    <i class="fas fa-shoe-prints"></i>
-                    <h3>+400 Modèles</h3>
-                    <p>Tous les styles disponibles</p>
-                </div>
-                <div class="trust-card">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Livraison Gratuite</h3>
-                    <p>Dès 100€ d'achat</p>
-                </div>
-                <div class="trust-card">
-                    <i class="fas fa-undo-alt"></i>
-                    <h3>Retours Faciles</h3>
-                    <p>30 jours pour changer d'avis</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="collections">
-        <div class="container">
-            <h2>Nos Collections</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #d4af37 0%, #e94b9d 100%);">
-                        <i class="fas fa-boot"></i>
+            <!-- Categories Section -->
+            <section class="categories" id="collections">
+                <div class="container">
+                    <h2>Nos Collections</h2>
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="showCategory('bottes')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #d4af37 0%, #e94b9d 100%);">
+                                <i class="fas fa-boot"></i>
+                            </div>
+                            <h3>Bottes & Bottines</h3>
+                            <p>+120 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
+                        <div class="category-card" onclick="showCategory('escarpins')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #e94b9d 0%, #1a1a1a 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Escarpins</h3>
+                            <p>+85 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
+                        <div class="category-card" onclick="showCategory('ballerines')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Ballerines</h3>
+                            <p>+95 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
+                        <div class="category-card" onclick="showCategory('mocassins')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #f8f8f8 0%, #e94b9d 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Mocassins</h3>
+                            <p>+70 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
+                        <div class="category-card" onclick="showCategory('sandales')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #d4af37 0%, #1a1a1a 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Sandales</h3>
+                            <p>+60 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
+                        <div class="category-card" onclick="showCategory('ville')">
+                            <div class="category-image" style="background: linear-gradient(135deg, #e94b9d 0%, #d4af37 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Chaussures de Ville</h3>
+                            <p>+100 modèles</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary">Voir</a>
+                        </div>
                     </div>
-                    <h3>Bottes & Bottines</h3>
-                    <p>+120 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
                 </div>
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #e94b9d 0%, #1a1a1a 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Escarpins</h3>
-                    <p>+85 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Ballerines</h3>
-                    <p>+95 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #f8f8f8 0%, #e94b9d 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Mocassins</h3>
-                    <p>+70 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #d4af37 0%, #1a1a1a 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Sandales</h3>
-                    <p>+60 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image" style="background: linear-gradient(135deg, #e94b9d 0%, #d4af37 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Chaussures de Ville</h3>
-                    <p>+100 modèles</p>
-                    <a href="#" class="btn btn-secondary">Voir</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <h2>Nos Meilleures Ventes</h2>
-            <div class="filters">
-                <select class="filter-select"><option>Toutes les tailles</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option></select>
-                <select class="filter-select"><option>Tous les prix</option><option>Moins de 50€</option><option>50€ - 100€</option><option>100€ - 150€</option><option>Plus de 150€</option></select>
-                <select class="filter-select"><option>Trier par</option><option>Nouveautés</option><option>Les plus vendus</option><option>Prix croissant</option><option>Prix décroissant</option></select>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Botte+Élégante" alt="Botte élégante">
-                        <span class="badge">Nouveau</span>
+            <!-- Products Section -->
+            <section class="products" id="products">
+                <div class="container">
+                    <h2>Nos Meilleures Ventes</h2>
+                    <div class="filters">
+                        <select class="filter-select"><option>Toutes les tailles</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option></select>
+                        <select class="filter-select"><option>Tous les prix</option><option>Moins de 50€</option><option>50€ - 100€</option><option>100€ - 150€</option><option>Plus de 150€</option></select>
+                        <select class="filter-select"><option>Trier par</option><option>Nouveautés</option><option>Les plus vendus</option><option>Prix croissant</option><option>Prix décroissant</option></select>
                     </div>
-                    <h3>Botte Élégante Noire</h3>
-                    <div class="rating">★★★★★ (24 avis)</div>
-                    <p class="price">79,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Escarpin+Confort" alt="Escarpin confort">
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Produits générés par JavaScript -->
                     </div>
-                    <h3>Escarpin Confort Camel</h3>
-                    <div class="rating">★★★★☆ (18 avis)</div>
-                    <p class="price">65,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Ballerine+Cuir" alt="Ballerine cuir">
-                        <span class="badge promo">-20%</span>
-                    </div>
-                    <h3>Ballerine Cuir Premium</h3>
-                    <div class="rating">★★★★★ (32 avis)</div>
-                    <p class="price"><span class="original">89,99€</span> 71,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Mocassin+Classique" alt="Mocassin classique">
-                    </div>
-                    <h3>Mocassin Classique Bordeaux</h3>
-                    <div class="rating">★★★★☆ (15 avis)</div>
-                    <p class="price">69,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Sandal+Été" alt="Sandale été">
-                    </div>
-                    <h3>Sandale Confort Été</h3>
-                    <div class="rating">★★★★★ (28 avis)</div>
-                    <p class="price">49,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/250x300?text=Derby+Homme" alt="Derby homme">
-                    </div>
-                    <h3>Derby Homme Oxford</h3>
-                    <div class="rating">★★★★★ (21 avis)</div>
-                    <p class="price">85,99€</p>
-                    <p class="availability">✓ En stock - Tailles 40-48</p>
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Payment Section -->
-    <section class="payment-section">
-        <div class="container">
-            <h2>Moyens de Paiement</h2>
-            <div class="payment-grid">
-                <div class="payment-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Carte Bancaire</h3>
-                    <p>Visa, Mastercard, American Express</p>
+            <!-- Payment Section -->
+            <section class="payment-section">
+                <div class="container">
+                    <h2>Moyens de Paiement</h2>
+                    <div class="payment-grid">
+                        <div class="payment-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Carte Bancaire</h3>
+                            <p>Visa, Mastercard, American Express</p>
+                        </div>
+                        <div class="payment-card">
+                            <i class="fas fa-coins"></i>
+                            <h3>Paiement 3x</h3>
+                            <p>À partir de 150€ sans intérêts</p>
+                        </div>
+                        <div class="payment-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Portefeuille Numérique</h3>
+                            <p>Apple Pay, Google Pay, PayPal</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="payment-card">
-                    <i class="fas fa-coins"></i>
-                    <h3>Paiement 3x</h3>
-                    <p>À partir de 150€ sans intérêts</p>
-                </div>
-                <div class="payment-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Portefeuille Numérique</h3>
-                    <p>Apple Pay, Google Pay, PayPal</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
-        <div class="container">
-            <h2>Nos Conseils</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #d4af37 0%, #e94b9d 100%);">
-                        <i class="fas fa-ruler"></i>
+            <!-- Blog Section -->
+            <section class="blog" id="blog">
+                <div class="container">
+                    <h2>Nos Conseils</h2>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-image" style="background: linear-gradient(135deg, #d4af37 0%, #e94b9d 100%);">
+                                <i class="fas fa-ruler"></i>
+                            </div>
+                            <h3>Guide des Tailles</h3>
+                            <p>Comment bien choisir votre pointure pour un confort optimal.</p>
+                            <a href="javascript:void(0)" class="read-more">Lire l'article →</a>
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-image" style="background: linear-gradient(135deg, #e94b9d 0%, #1a1a1a 100%);">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Tendances 2024</h3>
+                            <p>Les styles incontournables de cette saison pour grandes tailles.</p>
+                            <a href="javascript:void(0)" class="read-more">Lire l'article →</a>
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Entretien des Chaussures</h3>
+                            <p>Nos conseils pour prolonger la durée de vie de vos chaussures.</p>
+                            <a href="javascript:void(0)" class="read-more">Lire l'article →</a>
+                        </div>
                     </div>
-                    <h3>Guide des Tailles</h3>
-                    <p>Comment bien choisir votre pointure pour un confort optimal.</p>
-                    <a href="#" class="read-more">Lire l'article →</a>
                 </div>
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #e94b9d 0%, #1a1a1a 100%);">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                    <h3>Tendances 2024</h3>
-                    <p>Les styles incontournables de cette saison pour grandes tailles.</p>
-                    <a href="#" class="read-more">Lire l'article →</a>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Entretien des Chaussures</h3>
-                    <p>Nos conseils pour prolonger la durée de vie de vos chaussures.</p>
-                    <a href="#" class="read-more">Lire l'article →</a>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
+
+        <!-- CATEGORY PAGE -->
+        <div id="categoryPage" class="page">
+            <section class="category-detail">
+                <div class="container">
+                    <button class="btn-back" onclick="goHome()"><i class="fas fa-arrow-left"></i> Retour</button>
+                    <h2 id="categoryTitle">Catégorie</h2>
+                    <div class="category-filters">
+                        <select class="filter-select"><option>Toutes les tailles</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option></select>
+                        <select class="filter-select"><option>Tous les prix</option><option>Moins de 50€</option><option>50€ - 100€</option><option>100€ - 150€</option><option>Plus de 150€</option></select>
+                    </div>
+                    <div class="products-grid" id="categoryProductsGrid">
+                        <!-- Produits de la catégorie -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CART PAGE -->
+        <div id="cartPage" class="page">
+            <section class="cart-section">
+                <div class="container">
+                    <button class="btn-back" onclick="goHome()"><i class="fas fa-arrow-left"></i> Retour</button>
+                    <h2>Mon Panier</h2>
+                    <div id="cartContent" class="cart-content">
+                        <p class="empty-cart">Votre panier est vide</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -274,37 +249,37 @@
                 <div class="footer-column">
                     <h4>À Propos</h4>
                     <ul>
-                        <li><a href="#">Qui sommes-nous ?</a></li>
-                        <li><a href="#">Nos points de vente</a></li>
-                        <li><a href="#">Carrières</a></li>
-                        <li><a href="#">Presse</a></li>
+                        <li><a href="javascript:void(0)">Qui sommes-nous ?</a></li>
+                        <li><a href="javascript:void(0)">Nos points de vente</a></li>
+                        <li><a href="javascript:void(0)">Carrières</a></li>
+                        <li><a href="javascript:void(0)">Presse</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Aide & Contact</h4>
                     <ul>
-                        <li><a href="#">Politique de retour</a></li>
-                        <li><a href="#">Livraison</a></li>
-                        <li><a href="#">Nous contacter</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="javascript:void(0)">Politique de retour</a></li>
+                        <li><a href="javascript:void(0)">Livraison</a></li>
+                        <li><a href="javascript:void(0)">Nous contacter</a></li>
+                        <li><a href="javascript:void(0)">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">CGV</a></li>
-                        <li><a href="#">Confidentialité</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="javascript:void(0)">CGV</a></li>
+                        <li><a href="javascript:void(0)">Confidentialité</a></li>
+                        <li><a href="javascript:void(0)">Cookies</a></li>
+                        <li><a href="javascript:void(0)">Mentions légales</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Suivez-nous</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-facebook"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
             </div>
